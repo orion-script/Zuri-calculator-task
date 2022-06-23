@@ -1,20 +1,22 @@
-const addition = function (a, b) {
-  return a + b;
-};
+const firstNum = parseInt(prompt("Enter first number: "));
+const operator = prompt("Enter choice: +, -, /, *");
+const secondNum = parseInt(prompt("Enter second number: "));
+const message = document.querySelector(".message");
 
-const substraction = function (a, b) {
-  return a - b;
-};
+let result;
 
-const multiplication = function (a, b) {
-  return a * b;
-};
+if (operator === "+") {
+  result = firstNum + secondNum;
+} else if (operator === "-") {
+  result = firstNum - secondNum;
+} else if (operator === "/") {
+  result = firstNum / secondNum;
+} else if (operator === "*") {
+  result = firstNum * secondNum;
+} else {
+  result = "Please choose an operator (+, -, /, *) ";
+}
 
-const division = function (a, b) {
-  return a / b;
-};
-
-console.log(addition(6, 2));
-console.log(substraction(6, 2));
-console.log(multiplication(6, 2));
-console.log(division(6, 2));
+message.textContent = result;
+message.style.textAlign = "center";
+message.style.fontSize = "150px";
